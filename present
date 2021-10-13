@@ -1,0 +1,2 @@
+#! /usr/bin/env sh
+lookatme -e file_loader --live notes.md
