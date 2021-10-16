@@ -202,6 +202,6 @@ vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>lua require('telescope.builtin'
 
 # Demo time!
 
+Notes to reviewer(s):
 
-
-# Thank you, any questions?
+I will be giving a demo on taking an existing `init.vim` file and turning it into an `init.lua` file, as well as how to scaffold out some structure in the `nvim/lua` config folder. I will be working on adding that `init.vim` file to this repo this weekend, as I wanted to compile together configuration from `init.vim` files that the community shared with me in my post on Reddit. I also plan to spend a bit of time depending on how long I have left working through the process of writing your own custom functions to attach to keybindings, using some functions from my own configuration as examples for problems I solved with Neovim's Lua APIs. I'll also add the configuration for those functions to this repo this weekend as well.
