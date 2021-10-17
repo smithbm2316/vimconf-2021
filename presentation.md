@@ -27,7 +27,7 @@ patat:
 
 ## Me
 
-![](greenshirt-smile-scaled.jpg)
+![](images/greenshirt-smile-scaled.jpg)
 
 
 
@@ -88,11 +88,11 @@ patat:
 
 # How I hope you feel after this presentation
 
-![](pepegaHackerman.gif)
+![](images/pepegaHackerman.gif)
 
 # How I feel about doing a live demo of tweaking configuration
 
-![](monkaGiga.gif)
+![](images/monkaGiga.gif)
 
 
 
