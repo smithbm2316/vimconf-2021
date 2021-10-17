@@ -64,6 +64,7 @@ patat:
 > - [What is LSP? (Microsoft)](https://microsoft.github.io/language-server-protocol/)
 > - [What is Treesitter? (FOSDEM)](https://www.youtube.com/watch?v=0CGzC_iss-8)
 > - [Learning how to write and use Lua in Neovim (Nanotee's guide)](https://github.com/nanotee/nvim-lua-guide)
+> - [Programming in Lua: a detailed look at the Lua programming language](https://www.lua.org/pil/contents.html)
 
 ### Resources from Telescopic Johnson (TJ DeVries) himself
 
@@ -119,6 +120,11 @@ require('plugins\telescope')
 
 ```lua
 require"telescope.builtin".find_files {}
+```
+
+### What is the colon between two functions?
+```lua
+vim.opt.shortmess:append('c')
 ```
 
 
