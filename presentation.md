@@ -22,7 +22,7 @@ patat:
 
 # Migrating from init.vim to init.lua
 
-# Who Am I?
+# whoami
 
 
 ## Me
@@ -111,20 +111,27 @@ patat:
 ### `require`-ing modules
 
 ```lua
+
 require('plugins.telescope')
 require('plugins/telescope')
 require('plugins\telescope')
+
 ```
 
 ### String or curly brackets following the name of a function??
 
 ```lua
+
 require"telescope.builtin".find_files {}
+
 ```
 
 ### What is the colon between two functions?
+
 ```lua
+
 vim.opt.shortmess:append('c')
+
 ```
 
 
@@ -136,10 +143,12 @@ vim.opt.shortmess:append('c')
 - Vimscript
 
 ```vim
+
 let g:name = 'Ben Smith'
 let w:name = 'Ben Smith'
 let b:name = 'Ben Smith'
 let t:name = 'Ben Smith'
+
 ```
 
 - Lua
@@ -156,23 +165,27 @@ vim.t.name = 'Ben Smith'
 - Vimscript
 
 ```vim
+
 " boolean
 set autoindent/noautoindent
 " number
 set shiftwidth=2
 " string
 set wildmode=full
+
 ```
 
 - Lua
 
 ```lua
+
 -- boolean
 vim.opt.autoindent = true
 -- number
 vim.opt.shiftwidth = 2
 -- string
 set wildmode = 'full'
+
 ```
 
 
@@ -181,17 +194,21 @@ set wildmode = 'full'
 - Vimscript
 
 ```vim
+
 " map lhs rhs
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+
 ```
 
 - Lua
 
 ```lua
+
 -- vim.api.nvim_set_keymap(mode, lhs, rhs, options_table)
 
 -- normal
 vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>lua require('telescope.builtin').find_files()<cr>', { noremap = true })
+
 ```
 
 
