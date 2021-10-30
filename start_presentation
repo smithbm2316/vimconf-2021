@@ -1,3 +1,0 @@
-#! /usr/bin/env sh
-# lookatme -e file_loader -e terminal --live presentation.md
-patat -w presentation.md
