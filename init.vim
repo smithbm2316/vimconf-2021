@@ -1,4 +1,6 @@
-" settings
+""""""""""""
+" settings "
+""""""""""""
 syntax on
 filetype plugin indent on
 let mapleader = ' '
@@ -41,7 +43,9 @@ set wildoptions=pum
 
 
 
-" plugins
+"""""""""""
+" plugins "
+"""""""""""
 call plug#begin('~/.config/nvim/plugged')
 " telescope
 Plug 'nvim-lua/plenary.nvim'
@@ -97,18 +101,24 @@ call plug#end()
 
 
 
-" colorscheme
+"""""""""""""""
+" colorscheme "
+"""""""""""""""
 let g:rose_pine_variant='moon'
 colorscheme rose-pine
 
 
 
-" autocmds
+""""""""""""
+" autocmds "
+""""""""""""
 autocmd! TextYankPost * lua vim.highlight.on_yank { on_visual = false }
 
 
 
-" remaps
+""""""""""
+" remaps "
+""""""""""
 " remap Y to yank to end of line
 nnoremap Y y$
 vnoremap Y y$
