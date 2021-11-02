@@ -1,0 +1,82 @@
+@import '../node_modules/@fontsource/jetbrains-mono/500.css';
+@import '../node_modules/@fontsource/jetbrains-mono/500-italic.css';
+@import '../node_modules/@fontsource/inter/latin.css';
+
+:root {
+  --font: 'Inter', -apple-system, system-ui, sans-serif;
+  --mono-font: 'JetBrains Mono', Monaco, sans-serif;
+  --text: #e0def4;
+  --bg: #232136;
+  --bg-alt: #2a273f;
+  --heading: #c4a7e7;
+
+  --r-background-color: var(--bg);
+  --r-main-font: var(--font);
+  --r-main-font-size: 20px;
+  --r-main-color: var(--text);
+  --r-block-margin: 1rem;
+  --r-heading-margin: 1rem;
+  --r-heading-font: var(--font);
+  --r-heading-color: var(--heading);
+  --r-heading-line-height: 2;
+  --r-heading-letter-spacing: normal;
+  --r-heading-text-transform: none;
+  --r-heading-text-shadow: none;
+  --r-heading-font-weight: 600;
+  --r-heading1-text-shadow: none;
+  --r-heading1-size: 3em;
+  --r-heading2-size: 2em;
+  --r-heading3-size: 1.5em;
+  --r-heading4-size: 1.0em;
+  --r-code-font: var(--mono-font);
+  --r-link-color: #eb6f92;
+  --r-link-color-dark: hsl(343, 76%, 60%);
+  --r-link-color-hover: hsl(343, 76%, 75%);
+  --r-selection-background-color: #59546d;
+  --r-selection-color: var(--text);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul ul {
+  margin-left: 0 !important;
+}
+
+ul li {
+  margin: 0.25em 0;
+}
+
+pre {
+  font-size: 1.2rem !important;
+  line-height: 1.5 !important;
+  max-width: 80ch;
+}
+
+code {
+  font-weight: 500;
+  white-space: pre-wrap !important;
+}
+
+:not(pre) > code {
+  background-color: var(--bg-alt);
+  padding: 0.25em 0.5em;
+  margin: 0 0.1em;
+}
+
+.code-compare {
+  display: grid !important;
+  top: auto !important;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+}
+
+.grid-3 {
+  display: grid !important;
+  top: auto !important;
+  grid-template-columns: 1fr 500px 1fr;
+  grid-gap: 1rem;
+  align-items: center;
+}

@@ -1,0 +1,22 @@
+{
+  "name": "vimconf-2021",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@ghp:smithbm2316/vimconf-2021.git",
+  "author": "Ben Smith <bsmithdev@mailbox.org>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "reveal-md slides/*.md --disable-auto-open -w",
+    "build": "reveal-md slides/*.md --static"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^4.5.0",
+    "@fontsource/jetbrains-mono": "^4.5.0",
+    "add": "^2.0.6",
+    "reveal-md": "^5.2.0",
+    "yarn": "^1.22.17"
+  },
+  "devDependencies": {
+    "husky": "^7.0.4"
+  }
+}
