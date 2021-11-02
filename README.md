@@ -13,6 +13,6 @@ This is the repository for talk that I gave at [VimConf 2021](https://vimconf.li
 - The `lua_advanced_setup` folder is where you will find a more fleshed-out `init.lua`-based setup! It takes what we had in the original `init.vim` file and expands it into multiple different smaller files, shows you how to use `require()` properly, and adds some really cool custom functions and mappings that I used in my setup personally! If you can understand the gist of what is happening in this folder (with my added comments hopefully helping you be able to learn!), you'll be off to the races with your new Lua setup!
 
 
-### Want to run the slides?
+### Want to see the slides?
 
-Install the command-line slideshow presenter [patat](https://github.com/jaspervdj/patat) and run the command `patat slides.md` to see my slides live! You'll have to have the Kitty terminal installed to view the images in it (it uses kitty's image feature to render them), but otherwise the content should be there 😃.
+Go [here](https://smithbm2316.github.io/vimconf-2021) to view the slides live!
