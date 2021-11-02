@@ -2,35 +2,17 @@
 title: Migrating from init.vim to init.lua
 author: Ben Smith
 date: 2021-10-29
-patat:
-  incrementalLists: true
-  pandocExtensions:
-    - patat_extensions
-  slideLevel: 2
-  margins:
-    left: 40
-    right: 40
-  images:
-    backend: kitty
-  eval:
-    lua_eval:
-      command: luajit
-      fragment: true
-      replace: false
 ---
 
 # Migrating from init.vim to init.lua
 
+---
 
-# whoami
+## whoami
+
+<section class='grid-3'>
 
 ![](images/greenshirt-smile-scaled.jpg)
-
-## whoami
-
-![](images/graduate-scaled.jpg)
-
-## whoami
 
 - Web Developer 👨‍💻at [Vincit USA](https://vincit.com)
 - Recent college graduate 👨‍🎓from UC Irvine with a degree in Informatics
@@ -39,9 +21,15 @@ patat:
 - Manchester United ⚽️ and Golden State Warriors 🏀 fan
 - Drinks of choice are coffee ☕️, gin and tonics 🥃, dry hard ciders 🍻
 
+![](images/graduate-scaled.jpg)
 
+</section>
+
+---
 
 # About this talk
+
+---
 
 ## What this talk is *NOT*
 
@@ -54,8 +42,12 @@ patat:
 - Comparison of package managers
 - Comparison of Lua plugins vs Vimscript plugins
 
+---
 
-## Well, what if I wanted this talk to be about those things?
+
+# Well, what if I wanted this talk to be about those things?
+
+---
 
 ### Resources for further learning about a number of the topics:
 
@@ -65,6 +57,8 @@ patat:
 - [Learning how to write and use Lua in Neovim (Nanotee's guide)](https://github.com/nanotee/nvim-lua-guide)
 - [Programming in Lua: a detailed look at the Lua programming language](https://www.lua.org/pil/contents.html)
 
+---
+
 ### Resources from Telescopic Johnson (TJ DeVries) himself
 
 - [Treesitter & LSP Compared](https://youtu.be/c17j09vY5sw)
@@ -72,8 +66,7 @@ patat:
 - [What is Neovim builtin LSP?](https://www.youtube.com/watch?v=C9X5VF9ASac)
 - [Why Lua is a good fit for Neovim](https://www.youtube.com/watch?v=IP3J56sKtn0)
 
-
-
+---
 
 ## What this talk *IS*
 
@@ -84,14 +77,13 @@ patat:
 - Assorted tips/tricks I've picked up over the last year of my Neovim journey
 - Live demo of migrating a configuration!
 
+---
 
-
-
-# How I hope you feel after this presentation
+## How I hope you feel after this presentation
 
 ![](images/pepegaHackerman.gif)
 
-
+---
 
 ## Why choose Lua as a tool in your config setup?
 
@@ -100,9 +92,11 @@ patat:
 - Relatively simple and small language
 - Fun to use (I'm a bit biased :D)
 
-
+---
 
 # Common misconceptions about Lua syntax
+
+---
 
 ## `require`-ing modules
 ```lua
@@ -114,7 +108,9 @@ require('plugins/telescope')
 require('plugins\\telescope')
 ```
 
-## String or curly brackets following the name of a function??
+---
+
+## What's that string/`{}` after a function??
 
 ```lua
 -- the following line is
@@ -124,6 +120,7 @@ require("telescope.builtin").find_files({})
 ```
 - If you are passing a `string` or `table` as a *single* parameter to a function, the parenthesis may be omitted
 
+---
 
 ## What is the colon between two functions?
 
@@ -135,18 +132,21 @@ string.match(name, 'Ben')
 -- as this:
 name:match('Ben')
 ```
-- Essentially like object-oriented programming (OOP) in Lua
-- Passes the item you call the function on as the first parameter to the funciton
+- Lua's version of object-oriented programming (OOP)
+- Passes the item you call the function on as the first parameter to the function
 
+---
 
+## Common functions, variables, and concepts when configuring with Lua
 
-
-
-# Common functions, variables, and concepts when configuring with Lua
+---
 
 ## Neovim-specific variables
 
+<section class='code-compare'>
+
 ### Vimscript
+
 ```vim
 " global
 let g:name = 'I am globally available!'
@@ -159,6 +159,7 @@ let b:name = 'I am available to this buffer!'
 ```
 
 ### Lua
+
 ```lua
 -- global
 vim.g.name = 'I am globally available!'
@@ -170,8 +171,13 @@ vim.w.name = 'I am available to this window!'
 vim.b.name = 'I am available to this buffer!'
 ```
 
+</section>
+
+---
 
 ## `set` command in Neovim
+
+<section class='code-compare'>
 
 ### Vimscript
 
@@ -195,39 +201,47 @@ vim.opt.shiftwidth = 2
 set wildmode = 'full'
 ```
 
+</section>
 
+---
 
 ## Keymappings
+
+<section class='code-compare'>
 
 ### Vimscript
 
 ```vim
-" map lhs rhs
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+" |mode|no-recursive|map lhs rhs
+nnoremap <leader>ff <cmd>lua
+	\ require('telescope.builtin').find_files()<cr>
 ```
 
 ### Lua
 
 ```lua
 -- vim.api.nvim_set_keymap(mode, lhs, rhs, options_table)
-
--- normal
-vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>lua require('telescope.builtin').find_files()<cr>', { noremap = true })
+vim.api.nvim_set_keymap(
+	'n', -- normal mode
+	'<leader>ff', -- lhs
+	[[<cmd>lua require'telescope.builtin'.find_files()<cr>]],
+	{ noremap = true, silent = true } -- options_table
+)
 ```
 
+</section>
 
-
+---
 
 ## Miscellaneous tips and tricks 
 
 - Search the help docs efficiently!
-    * use `:helpgrep your-query-here` to search for a regex pattern in the help docs
-    * use [Telescope](https://github.com/nvim-telescope/telescope.nvim)'s `help_tags` picker to search for tags in the help docs
-        + `:lua require('telescope.builtin').help_tags()`
+  - use `:helpgrep your-query-here` to search for a regex pattern in the help docs
+  - use [Telescope](https://github.com/nvim-telescope/telescope.nvim)'s `help_tags` picker to search for tags in the help docs
+    - `:lua require('telescope.builtin').help_tags()`
 - Ask questions on [Discourse](https://discourse.neovim.io) and the [subreddit](https://reddit.com/r/neovim)
 
-
-
+---
 
 # Demo time!
 

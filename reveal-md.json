@@ -1,0 +1,15 @@
+{
+  "assetsDir": "assets",
+  "css": [
+    "slides/smithbm2316.css"
+  ],
+  "highlightTheme": "atom-one-dark",
+  "port": "3000",
+  "revealOptions": {
+    "transition": "fade"
+  },
+  "staticDir": "docs",
+  "staticDirs": [
+    "slides/images"
+  ]
+}
