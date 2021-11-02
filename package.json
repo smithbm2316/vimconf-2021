@@ -12,11 +12,6 @@
   "dependencies": {
     "@fontsource/inter": "^4.5.0",
     "@fontsource/jetbrains-mono": "^4.5.0",
-    "add": "^2.0.6",
-    "reveal-md": "^5.2.0",
-    "yarn": "^1.22.17"
-  },
-  "devDependencies": {
-    "husky": "^7.0.4"
+    "reveal-md": "^5.2.0"
   }
 }
