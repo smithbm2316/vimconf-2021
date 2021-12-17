@@ -1,8 +1,8 @@
-local plugin_config_root = 'plugin_configs.'
-local plugin_config_files = vim.fn.globpath('lua/plugin_configs', '*.lua')
+local plugin_config_files = vim.fn.globpath('~/.config/nvim/lua/plugin_configs', '*.lua', false, true)
 
-for plugin_name in plugin_config_files:gmatch('([%w%d-_]+).lua') do
-  if plugin_name ~= 'init' then
-    require(plugin_config_root .. plugin_name)
+for _, plugin_config_path in ipairs(plugin_config_files) do
+  local plugin = plugin_config_path:gsub('.+/', ''):sub(0, -5)
+  if plugin ~= 'init' then
+    require('plugin_configs.' .. plugin)
   end
 end
