@@ -15,5 +15,6 @@ require 'globals'
 -- fine other than some plugin configuration that is going awry
 require 'settings'
 require 'plugins'
+require 'plugin_configs'
 require 'mappings'
 require 'autocmds'
